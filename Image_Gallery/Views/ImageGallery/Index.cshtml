@@ -1,0 +1,26 @@
+﻿@model Image_Gallery.Models.GalleryIndexModel
+<link href="~/css/site.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="row container body-content">
+       <div class=" Gallery-Content">
+
+           @foreach (var image in Model.Images)
+            {
+               
+           <div class="Gallery-Image-Container drop-shadow">
+               <a asp-controller="ImageGallery" asp-action="Detail" asp-route-id="@image.Id">
+                   <div class="Gallery-Image" style="background-image:url(@image.URL)"> </div>
+               </a>
+
+           </div>
+            }
+
+
+    </div>
+
+
+</div>
